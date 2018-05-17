@@ -45,6 +45,22 @@ void print_in_binary(uint8_t byte) {
     }
 }
 
+//1.8
+void print_in_binary(const void* data, size_t size) {
+    const uint8_t* bytes = as_bytes(data);
+    for (size_t i = 0; i < size; i++) {
+        print_in_binary(bytes[i]);
+
+        // Для удобства чтения: пробелы между байтами, по 4 байта на строку.
+        if ((i + 1) % 4 == 0) {
+            cout << '\n';
+        }
+        else {
+            cout << ' ';
+        }
+    }
+}
+
 int
 main() {
     assert(nibble_to_hex(0x0) == '0');
@@ -66,10 +82,17 @@ main() {
     print_in_hex (123);
     print_in_hex (0xff);
     print_in_hex (0xab);
+
     uint32_t u32 = 0x42;
     cout << "u32 bytes: ";
     print_in_hex(&u32, sizeof(u32));
     cout << '\n';
     print_in_binary(3);
+
+
+    uint32_t u42 = 0x42;
+    cout << "u42 bytes: ";
+    print_in_hex(&u42, sizeof(u42));
+    cout << '\n';
     return 0;
 }
