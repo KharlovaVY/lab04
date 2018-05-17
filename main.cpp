@@ -94,5 +94,18 @@ main() {
     cout << "u42 bytes: ";
     print_in_hex(&u42, sizeof(u42));
     cout << '\n';
+
+    uint16_t operant1,operant3, res;
+    char operant2;
+    cin>>operant1>>operant2>>operant3;
+    if (operant2=='&') {
+        res = operant1 & operant3;
+        cout<<res;
+        print_in_hex(&operant2, sizeof(operant2));
+                cout << operant2;
+        print_in_hex(&operant3, sizeof(operant3));
+        cout << "=";
+        print_in_hex(&res, sizeof(res));
+    }
     return 0;
 }
