@@ -14,10 +14,6 @@ void print_in_hex(uint8_t byte) {
 }
 
 
-
-
-
-
 int
 main() {
     assert(nibble_to_hex(0x0) == '0');
@@ -36,5 +32,8 @@ main() {
     assert(nibble_to_hex(0xd) == 'd');
     assert(nibble_to_hex(0xe) == 'e');
     assert(nibble_to_hex(0xf) == 'f');
+    print_in_hex (123);
+    print_in_hex (0xff);
+    print_in_hex (0xab);
     return 0;
 }
