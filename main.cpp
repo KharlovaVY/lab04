@@ -60,7 +60,17 @@ void print_in_binary(const void* data, size_t size) {
         }
     }
 }
+ struct Student {
+     char name[17];
+     uint32_t year;
+     float sted_ball;
+     int sex: 1;
+     uint8_t courses;
+     Student* starosta;
+ }
 
+
+ };
 int
 main() {
     assert(nibble_to_hex(0x0) == '0');
@@ -106,6 +116,20 @@ main() {
         print_in_hex(&operant3, sizeof(operant3));
         cout << "=";
         print_in_hex(&res, sizeof(res));
+    }
+
+    //создаем массив из трех студентов
+    Student studarray[3]={
+            {"Eioi",2017,4.3,1,7,&studarray[1]},
+            {"starosta",2017,2.4,1,7,nullptr},
+            {"veronika",2017,4.3,1,6,&studarray[1]}
+    };
+    cout << "address ot array"<<&studarray:
+    cout <<"Size of array: "<<sizeof(studarray):
+    cout <<"\t Adress of elem: \y Size of elem:\n";
+    for (int i = 0; i < 3; i++) {
+        cout << i << ":\t" <<  studarray[i] <<"\t"<< sizeof(studarray)"\n";
+
     }
     return 0;
 }
