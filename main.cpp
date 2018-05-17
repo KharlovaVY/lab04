@@ -13,6 +13,28 @@ void print_in_hex(uint8_t byte) {
             << nibble_to_hex(byte & 0xf);
 }
 
+const uint8_t* as_bytes(const void* data) {
+    return reinterpret_cast<const uint8_t*>(data);
+}
+const uint8_t* as_bytes(const void* data);
+
+void print_in_hex(const void* data, size_t size) {
+    const uint8_t* bytes = as_bytes(data);
+    for (size_t i = 0; i < size; i++) {
+        print_in_hex(bytes[i]);
+
+        // Для удобства чтения: пробелы между байтам, по 16 байт на строку.
+        if ((i + 1) % 16 == 0) {
+            cout << '\n';
+        }
+        else {
+            cout << ' ';
+        }
+    }
+}
+
+
+
 
 int
 main() {
@@ -35,5 +57,10 @@ main() {
     print_in_hex (123);
     print_in_hex (0xff);
     print_in_hex (0xab);
+    uint32_t u32 = 0x42;
+    cout << "u32 bytes: ";
+    print_in_hex(&u32, sizeof(u32));
+    cout << '\n';
+
     return 0;
 }
