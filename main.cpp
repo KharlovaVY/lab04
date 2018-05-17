@@ -32,9 +32,18 @@ void print_in_hex(const void* data, size_t size) {
         }
     }
 }
-
-
-
+//1.7
+char bit_digit(uint8_t byte, uint8_t bit) {
+    if (byte & (0x1 << bit)) {
+        return '1';
+    }
+    return '0';
+}
+void print_in_binary(uint8_t byte) {
+    for (uint8_t bit = 7; bit > 0; bit--) {
+        cout << bit_digit(byte, bit);
+    }
+}
 
 int
 main() {
