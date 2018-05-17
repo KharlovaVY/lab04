@@ -67,9 +67,6 @@ void print_in_binary(const void* data, size_t size) {
      int sex: 1;
      uint8_t courses;
      Student* starosta;
- }
-
-
  };
 int
 main() {
@@ -124,12 +121,32 @@ main() {
             {"starosta",2017,2.4,1,7,nullptr},
             {"veronika",2017,4.3,1,6,&studarray[1]}
     };
-    cout << "address ot array"<<&studarray:
-    cout <<"Size of array: "<<sizeof(studarray):
-    cout <<"\t Adress of elem: \y Size of elem:\n";
+    cout << "address ot array"<<&studarray;
+    cout <<"Size of array: "<<sizeof(studarray);
+    cout <<"\t Adress of elem: \t Size of elem:\n";
     for (int i = 0; i < 3; i++) {
-        cout << i << ":\t" <<  studarray[i] <<"\t"<< sizeof(studarray)"\n";
+        cout << i << ":\t" <<  studarray[0].name <<"\t"<< sizeof(studarray)<<"\n";
+//???
+        cout<<"FIRST ELEMENT\n";
+        cout<<"t Address of field: \t sizeof field \f offset:\n";
+        cout <<"Name:\t\t"<<studarray[0].name<<"\t\t"<<sizeof(studarray)<<offsetof(struct
+                Student,name )<<"\n";
+        cout<<"SECOND ELEMENT\n";
+        cout<<"t Address of field: \t sizeof field \f offset:\n";
+        cout <<"Name:\t\t"<<studarray[0].name<<"\t\t"<<sizeof(studarray)<<offsetof(struct
+                Student,name )<<"\n";
+        //для года,пола,средний балл и тд
 
     }
+
+    cout << "NAME: \n";
+    cout << "Brimary ";
+    print_in_binary(&studarray[0].name, sizeof(studarray);
+    cout<<"\n Hex:";
+    //год поступления, средний балл
+    cout<<"FIRST ELEMENT\n";
+    cout<<"t Address of field: \t sizeof field \f offset:\n";
+    cout <<"Name:\t\t"<<studarray[0].name<<"\t\t"<<sizeof(studarray)<<offsetof(struct
+            Student,name )<<"\n";
     return 0;
 }
