@@ -70,6 +70,6 @@ main() {
     cout << "u32 bytes: ";
     print_in_hex(&u32, sizeof(u32));
     cout << '\n';
-
+    print_in_binary(3);
     return 0;
 }
