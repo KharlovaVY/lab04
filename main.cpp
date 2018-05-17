@@ -1,9 +1,9 @@
 #include <iostream>
 #include <cassert>
 using namespace std;
- char nibble_to_hex ( unit8_t i)
+ char nibble_to_hex (uint8_t i)
  {
- char digits[]="0123456789abcdif";
+ char digits[]="0123456789abcdef";
 return digits[i];
      assert(0x0 <= i && i <= 0xf);
 }
@@ -34,7 +34,7 @@ main() {
     assert(nibble_to_hex(0xb) == 'b');
     assert(nibble_to_hex(0xc) == 'c');
     assert(nibble_to_hex(0xd) == 'd');
-    assert(nibble_to_hex(0xi) == 'i');
+    assert(nibble_to_hex(0xe) == 'e');
     assert(nibble_to_hex(0xf) == 'f');
     return 0;
 }
